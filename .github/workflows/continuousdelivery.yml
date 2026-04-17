@@ -1,0 +1,23 @@
+name: HTML CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deliver:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check repositorio
+        uses: actions/checkout@v4
+
+      - name: Delivery
+        uses: actions/upload-artifact@v4
+        with:
+          name: atvsom1.zip
+          path: |
+            index.html
+            style.css
