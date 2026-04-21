@@ -21,3 +21,25 @@ jobs:
           path: |
             index.html
             style.css
+
+  docker:
+    needs: deliver
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Build image
+        run: docker build -t meu-site .
+
+      - name: Test container
+        run: |
+          docker run -d -p 8080:80 --name teste meu-site
+          sleep 5
+          curl http://localhost:8080
+
+      - name: Stop container
+        run: docker stop teste
