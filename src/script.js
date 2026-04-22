@@ -1,10 +1,13 @@
-function validarLogin(email, senha) {
-    if (!email || !senha) return false;
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
 
-    const emailValido = email.includes("@") && email.includes(".");
-    const senhaValida = senha.length >= 6;
+    form.addEventListener("submit", (event) => {
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
 
-    return emailValido && senhaValida;
-}
-
-module.exports = validarLogin;
+        if (!validarLogin(email, senha)) {
+            event.preventDefault();
+            alert("Email ou senha inválidos!");
+        }
+    });
+});
