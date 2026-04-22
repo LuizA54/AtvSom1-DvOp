@@ -19,8 +19,9 @@ jobs:
         with:
           name: atvsom1.zip
           path: |
-            index.html
-            style.css
+            src/index.html
+            src/style.css
+            src/script.js
 
   docker:
     needs: deliver
