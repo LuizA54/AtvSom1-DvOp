@@ -27,3 +27,14 @@ jobs:
 #Código gerado com assistência de IA.
 #Ativo quando envia algo para o Branch ou abre um PR.
 #Instala Node.js e ferramentas que vão ajudar a verificar possíveis erros no código.
+
+
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Discord Webhook
+        uses: johnnyhuy/actions-discord-git-webhook@main
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
