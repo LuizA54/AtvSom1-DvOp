@@ -24,7 +24,7 @@ jobs:
       - name: Validar HTML
         run: htmlhint "**/*.html"
         
-#Código gerado com assistência de IA.
+#Código acima gerado com assistência de IA.
 #Ativo quando envia algo para o Branch ou abre um PR.
 #Instala Node.js e ferramentas que vão ajudar a verificar possíveis erros no código.
 
