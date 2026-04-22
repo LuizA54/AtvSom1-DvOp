@@ -21,7 +21,7 @@ jobs:
           path: |
             src/index.html
             src/style.css
-            src/validarlogin.js
+            src/validarLogin.js
             test/validarLogin.test.js
 
   docker:
