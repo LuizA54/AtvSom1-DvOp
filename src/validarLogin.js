@@ -7,4 +7,10 @@ function validarLogin(email, senha) {
     return emailValido && senhaValida;
 }
 
-module.exports = validarLogin;
+if (typeof module !== "undefined") {
+    module.exports = validarLogin;
+}
+
+if (typeof window !== "undefined") {
+    window.validarLogin = validarLogin;
+}
