@@ -1,4 +1,4 @@
-const validarLogin = require('../src/validarLogin.js');
+const validarLogin = require('../src/validarLogin');
 
 test('deve retornar true para dados válidos', () => {
     expect(validarLogin('teste@email.com', '123456')).toBe(true);
