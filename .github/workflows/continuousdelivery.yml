@@ -21,7 +21,6 @@ jobs:
           path: |
             src/index.html
             src/style.css
-            src/script.js
 
   docker:
     needs: deliver
